@@ -1,0 +1,21 @@
+{
+  "name": "library",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Daniel Hac"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/danielhac/nodejs-express",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7",
+    "font-awesome": "~4.7.0"
+  }
+}
