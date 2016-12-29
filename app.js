@@ -7,10 +7,13 @@ var port = process.env.PORT || 5001;
 // Set up middleware to be used by Express
 // Looks in 'public' directory for the related css/js static files (styles.css, etc), then it starts the routes
 app.use(express.static('public'));
-app.use(express.static('src/views'));
+app.set('views', './src/views');
+
+// EJS - Template engine
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-    res.send('Yo World');
+    res.render('index', {title: 'Yo from render', list: ['a','b']});
 });
 
 app.get('/books', function(req, res) {
