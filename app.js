@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = express();
 
-var port = 5001;
+var port = process.env.PORT || 5001;
 
 // Set up middleware to be used by Express
 // Looks in 'public' directory for the related css/js static files (styles.css, etc), then it starts the routes
