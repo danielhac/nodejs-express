@@ -7,12 +7,13 @@ var port = process.env.PORT || 5001;
 var nav = [{
     Link: '/books',
     Text: 'Book'
-    }, {
+}, {
     Link: '/Authors',
     Text: 'Author'
 }];
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
 
 // Set up middleware to be used by Express
 // Looks in 'public' directory for the related css/js static files (styles.css, etc), then it starts the routes
@@ -23,6 +24,7 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
+app.use('/Admin', adminRouter);
 
 app.get('/', function(req, res) {
     res.render('index', {
