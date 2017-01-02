@@ -29,7 +29,7 @@ var router = function() {
     authRouter.route('/signIn')
         .post(passport.authenticate('local', {
             // console.log('Failed');
-            failureRedirect: '/auth/fail'
+            failureRedirect: '/'
         }), function(req, res) {
             console.log('blah');
             res.redirect('/auth/profile');
