@@ -7,12 +7,14 @@ var books = [
         title: 'War and Peace',
         genre: '',
         author: 'Lev Nikolayevich Tolstoy',
+        bookId: 656,
         read: false
     },
     {
         title: 'Les Miserables',
         genre: '',
         author: 'Historical Fiction',
+        bookId: 24280,
         read: false
     }
 ];
