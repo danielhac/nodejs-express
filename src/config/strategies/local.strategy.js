@@ -3,7 +3,7 @@ var passport = require('passport'),
 
 module.exports = function() {
     passport.use(new LocalStrategy({
-        userNameField: 'userName',
+        usernameField: 'userName',
         passwordField: 'password'
     },
     // Determines if credentials are correct

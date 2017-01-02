@@ -1,6 +1,7 @@
 var express = require('express');
 var authRouter = express.Router();
 var mongodb = require('mongodb').MongoClient;
+var passport = require('passport');
 
 var router = function() {
 
@@ -24,11 +25,22 @@ var router = function() {
             });
         });
 
+    // Sign in - using passport to authenticate user
+    authRouter.route('/signIn')
+        .post(passport.authenticate('local', {
+            // console.log('Failed');
+            failureRedirect: '/auth/fail'
+        }), function(req, res) {
+            console.log('blah');
+            res.redirect('/auth/profile');
+        });
+
     authRouter.route('/profile')
         .get(function(req, res) {
             // req.user: how passport lets us know user signed in along with its info
             res.json(req.user);
         });
+
     return authRouter;
 };
 
