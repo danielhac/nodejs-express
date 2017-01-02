@@ -4,7 +4,8 @@ var mongodb = require('mongodb').MongoClient;
 // var objectId = require('mongodb').ObjectID;
 
 var router = function(nav) {
-    var bookController = require('../controllers/bookController')(null, nav);
+    var bookService = require('../services/goodreadsService')();
+    var bookController = require('../controllers/bookController')(bookService, nav);
 
     // If user isn't logged in, do not allow access
     bookRouter.use(bookController.verifyUser);
