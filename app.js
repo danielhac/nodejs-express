@@ -1,5 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser'); // Passport uses this to parse cookie session
+var passport = require('passport'); // Authentication middleware
+var session = require('express-session'); // Stores user info
 
 var app = express();
 
@@ -24,6 +27,11 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 // Same as above but for url encoded bodies
 app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(session({secret: 'library'})); // secret can be whatever
+
+require('./src/config/passport')(app); // Pulls in that file and execute its contents
+
 app.set('views', './src/views');
 
 // EJS - Template engine
