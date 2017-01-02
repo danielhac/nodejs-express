@@ -11,4 +11,6 @@ module.exports = function(app) {
     passport.deserializeUser(function (user, done) {
         done(null, user); // Instead of 'err', using 'null' until error checking implemented
     });
+
+    require('./strategies/local.strategy')();
 };
