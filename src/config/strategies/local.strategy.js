@@ -13,13 +13,13 @@ module.exports = function() {
 
         mongodb.connect(url, function(err, db) {
             var collection = db.collection('users');
-            collection.findOne({ username: username },
+            collection.findOne({username: username},
                 function(err, results) {
                     if (results.password === password) {
                         var user = results;
                         done(null, user);
                     } else {
-                        done(null, false, { message: 'Incorrect Credentials' });
+                        done(null, false, {message: 'Incorrect Credentials'});
                     }
                 }
             );

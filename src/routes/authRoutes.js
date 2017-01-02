@@ -28,14 +28,19 @@ var router = function() {
     // Sign in - using passport to authenticate user
     authRouter.route('/signIn')
         .post(passport.authenticate('local', {
-            // console.log('Failed');
             failureRedirect: '/'
         }), function(req, res) {
-            console.log('blah');
             res.redirect('/auth/profile');
         });
 
     authRouter.route('/profile')
+    // If user isn't logged in, redirect to '/'
+        .all(function(req, res, next) {
+            if (!req.user) {
+                res.redirect('/');
+            }
+            next();
+        })
         .get(function(req, res) {
             // req.user: how passport lets us know user signed in along with its info
             res.json(req.user);
