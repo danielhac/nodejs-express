@@ -4,15 +4,15 @@ var mongodb = require('mongodb').MongoClient;
 
 var books = [
     {
-        title: 'Testing title 1',
-        genre: 'I am testing genre 1',
-        author: 'Again testing author 1',
+        title: 'War and Peace',
+        genre: '',
+        author: 'Lev Nikolayevich Tolstoy',
         read: false
     },
     {
-        title: 'Testing title 2',
-        genre: 'I am testing genre 2',
-        author: 'Again testing author 2',
+        title: 'Les Miserables',
+        genre: '',
+        author: 'Historical Fiction',
         read: false
     }
 ];
