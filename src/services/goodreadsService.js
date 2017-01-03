@@ -17,7 +17,7 @@ var goodreadsService = function() {
                 str += chunk;
             });
             response.on('end', function() {
-                console.log(str);
+                // console.log(str); // Show all from api
                 parser.parseString(str, function(err, result) {
                     cb(null, result.GoodreadsResponse.book);
                 });

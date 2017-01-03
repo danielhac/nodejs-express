@@ -11,9 +11,6 @@ var port = process.env.PORT || 5001;
 var nav = [{
     Link: '/books',
     Text: 'Book'
-}, {
-    Link: '/Authors',
-    Text: 'Author'
 }];
 
 var bookRouter = require('./src/routes/bookRoutes')(nav);
@@ -47,9 +44,6 @@ app.get('/', function(req, res) {
         nav: [{
             Link: '/Books',
             Text: 'Books'
-        }, {
-            Link: '/Authors',
-            Text: 'Authors'
         }]
     });
 });

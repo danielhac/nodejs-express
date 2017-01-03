@@ -16,6 +16,13 @@ var books = [
         author: 'Historical Fiction',
         bookId: 24280,
         read: false
+    },
+    {
+        title: 'Fullstack React: The Complete Book on ReactJS',
+        genre: '',
+        author: 'Anthony Accomazzo',
+        bookId: 32705383,
+        read: false
     }
 ];
 

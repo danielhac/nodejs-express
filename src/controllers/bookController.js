@@ -7,7 +7,7 @@ var bookController = function(bookService, nav) {
 
     var verifyUser = function (req, res, next) {
         if (!req.user) {
-            // res.redirect('/');
+            res.redirect('/');
         }
         next();
     };
